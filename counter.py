@@ -10,11 +10,12 @@ class CounterDisplay(Digits):
 class Counter(HorizontalGroup):
     """A simple counter component."""
     count = Reactive(0)
+    
     def compose(self) -> ComposeResult:
         """Create the UI components."""
         yield CounterDisplay(value=str(self.count), id="counter_display")
-        yield Button("Increment", id="increment")
-        yield Button("Decrement", id="decrement")
+        yield Button("Increment", id="increment", variant="success")
+        yield Button("Decrement", id="decrement", variant="error")
         yield Button("Reset", id="reset")
 
 class CounterApp(App):

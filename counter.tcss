@@ -1,0 +1,15 @@
+Counter {
+    background: $boost;
+    height: 5;
+    margin: 1;
+    min-width: 50;
+    padding: 1;
+}
+
+CounterDisplay {
+    color: $foreground;
+}
+
+Button {
+    margin-left: 1;
+}
