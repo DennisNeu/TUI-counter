@@ -1,24 +1,24 @@
 from textual.app import App, ComposeResult
 from textual.widgets import Button, Header, Footer, Digits
 from textual.containers import HorizontalGroup
-
-
-class CounterButtons(HorizontalGroup):
-    """A group of buttons, layed out horizontally"""
-    def compose(self) -> ComposeResult:
-        """Create the UI components."""
-        yield Button("Increment", id="increment")
-        yield Button("Decrement", id="decrement")
-        yield Button("Reset", id="reset")
+from textual.reactive import Reactive
 
 
 class CounterDisplay(Digits):
     pass
 
+class Counter(HorizontalGroup):
+    """A simple counter component."""
+    count = Reactive(0)
+    def compose(self) -> ComposeResult:
+        """Create the UI components."""
+        yield CounterDisplay(value=str(self.count), id="counter_display")
+        yield Button("Increment", id="increment")
+        yield Button("Decrement", id="decrement")
+        yield Button("Reset", id="reset")
 
 class CounterApp(App):
     """A simple counter app using Textual."""
-    counter = 0
 
     BINDINGS = [
         ("q", "quit", "Quit"),
@@ -33,8 +33,7 @@ class CounterApp(App):
     def compose(self) -> ComposeResult:
         """Create the UI components."""
         yield Header(show_clock=True, icon="")
-        yield CounterDisplay(id="counter", value=str(self.counter))
-        yield CounterButtons()
+        yield Counter(id="counter")
         yield Footer()
 
     def action_toggle_darkmode(self) -> None:
