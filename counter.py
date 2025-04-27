@@ -23,8 +23,6 @@ class CounterApp(App):
     BINDINGS = [
         ("q", "quit", "Quit"),
         ("r", "reset", "Reset"),
-        ("i", "increment", "Increment"),
-        ("d", "decrement", "Decrement"),
         ("t", "toggle_darkmode", "Toggle Dark Mode")
     ]
 
