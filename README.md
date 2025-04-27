@@ -17,7 +17,7 @@ A simple terminal-based counter app built with [Textual](https://github.com/Text
 |-----|---------------------|
 | `q` | Quit the app        |
 | `r` | Remove counter      |
-| `a` | add counter         |
+| `a` | Add counter         |
 | `t` | Toggle dark mode    |
 
 
