@@ -19,6 +19,7 @@ class CounterApp(App):
         ("r", "reset", "Reset"),
         ("i", "increment", "Increment"),
         ("d", "decrement", "Decrement"),
+        ("t", "toggle_darkmode", "Toggle Dark Mode")
     ]
 
     CSS_PATH = "counter.tcss"
@@ -28,6 +29,12 @@ class CounterApp(App):
         yield Header(show_clock=True, icon="")
         yield CounterButtons()
         yield Footer()
+
+    def action_toggle_darkmode(self) -> None:
+        """An action to toggle dark mode."""
+        self.theme = (
+            "textual-dark" if self.theme == "textual-light" else "textual-light"
+        )
 
 
 if __name__ == "__main__":
