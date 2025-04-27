@@ -6,6 +6,7 @@ A simple terminal-based counter app built with [Textual](https://github.com/Text
 
 - Increment, decrement, and reset the counter.
 - Live counter display with Textual's `Digits` widget.
+- Add or remove counters.
 - Toggle between light and dark mode.
 - Keyboard shortcuts for fast interaction.
 - Header with live clock.
@@ -15,8 +16,10 @@ A simple terminal-based counter app built with [Textual](https://github.com/Text
 | Key | Action              |
 |-----|---------------------|
 | `q` | Quit the app        |
-| `r` | Reset the counter   |
+| `r` | Remove counter      |
+| `a` | add counter         |
 | `t` | Toggle dark mode    |
+
 
 ## Installation
 
