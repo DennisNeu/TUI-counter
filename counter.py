@@ -1,6 +1,14 @@
 from textual.app import App, ComposeResult
 from textual.widgets import Button, Header, Footer
+from textual.containers import HorizontalGroup
 
+
+class CounterButtons(HorizontalGroup):
+    def compose(self) -> ComposeResult:
+        """Create the UI components."""
+        yield Button("Increment", id="increment")
+        yield Button("Decrement", id="decrement")
+        yield Button("Reset", id="reset")
 
 class CounterApp(App):
     """A simple counter app using Textual."""
@@ -18,9 +26,7 @@ class CounterApp(App):
     def compose(self) -> ComposeResult:
         """Create the UI components."""
         yield Header(show_clock=True, icon="")
-        yield Button("Increment", id="increment")
-        yield Button("Decrement", id="decrement")
-        yield Button("Reset", id="reset")
+        yield CounterButtons()
         yield Footer()
 
 
